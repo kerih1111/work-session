@@ -160,6 +160,7 @@ public class TrackerFrame extends JFrame{
     private void handleStartAction() {
         if(guiTimer != null) {
             guiTimer.start();
+            
             this.sessionDao.endBreak(manager.endBreak(), this.currentSessionId);
             this.btnStart.setEnabled(false);
             this.lblTimer.setForeground(Color.WHITE);

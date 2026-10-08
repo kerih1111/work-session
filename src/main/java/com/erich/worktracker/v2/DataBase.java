@@ -18,8 +18,8 @@ import java.util.Scanner;
  * @author erich
  */
 public class DataBase {
-    private final String URL = "jdbc:sqlite:tracker.db";
-    
+
+private final String URL = "jdbc:sqlite:/home/erich/NetBeansProjects/WorkTracker-v2/tracker.db";
     private Connection connect() {
         Connection conn = null;
         

@@ -34,7 +34,9 @@ public class WorkSessionDAO {
     public void endBreak(Duration breaktime, int sessionId) {
         String SQL = "INSERT INTO breaks(duration_sec, session_id) VALUES(?, ?)";
         
-        dbManager.execute(SQL, breaktime, sessionId);
+        long seconds = breaktime.getSeconds();
+        
+        dbManager.execute(SQL, seconds, sessionId);
     }
     
 }

@@ -1,8 +1,9 @@
-*.db
-*.db-journal
-*.db-shm
-*.db-wal
-out/
 target/
-.idea/
 *.class
+*.db
+*.sqlite
+*.sqlite3
+.idea/
+*.iml
+.vscode/
+nbproject/private/
