@@ -1,20 +1,31 @@
-#Work tracker 1.0
+# Work Session & Focus Tracker (Java / SQLite)
 
-## Features 
-- Timer for your working time and breaks
-- Calculating Total Break time
-- SQLite Database integration
-- Custom UI in Swing
+A desktop productivity tracking application built with Java Swing and SQLite. Made to log work in a period of time and store it to improve productivity of a user and hit targets.
 
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+## Architectural Highlights
 
-Works based on Dynamic Completion Logic, performing Time Arithmetic to calculate the Projected End Time.
-Formula: Projected End Time = Start Time + Target Work Hours + Total Break Time
+- **Data Access Object (DAO) Pattern:** Encapsulates all relational database operations inside `WorkSessionDAO`, cleanly isolating data persistence logic from business and UI layers.
+- **Relational Persistence:** Uses SQLite with DDL definitions (`querry.sql`) to track session start/end timestamps, duration metrics, and associated break events.
+- **State & Event Management:** Decoupled `WorkManager` orchestration handling state transitions (Active, On Break, Completed) tied to a reactive Swing GUI (`TrackerFrame`).
 
+## Tech Stack
+- **Language:** Java
+- **Build System:** Apache Maven
+- **Database:** SQLite / JDBC
+- **Architecture:** DAO Pattern, MVC-style separation
 
-## NEXT PLANS FOR 1.1
-
-- Clean the MAIN class
-- make the buttons work just by one function
-- modify the UI and add panels
-- Make some new classes for UI/UX Design, for DAO and we're done 
+## Project Structure
+```text
+WorkTracker-v2/
+├── src/
+│   ├── main/
+│   │   ├── java/com/erich/worktracker/v2/
+│   │   │   ├── DataBase.java
+│   │   │   ├── TrackerFrame.java
+│   │   │   ├── WorkManager.java
+│   │   │   ├── WorkSessionDAO.java
+│   │   │   └── WorkTrackerV2.java
+│   │   └── resources/
+│   │       └── querry.sql
+├── pom.xml
+└── README.md

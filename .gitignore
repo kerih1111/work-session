@@ -7,3 +7,4 @@ target/
 *.iml
 .vscode/
 nbproject/private/
+tracker.sqbpro
